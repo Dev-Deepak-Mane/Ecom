@@ -1,0 +1,16 @@
+///create order
+export const CREATE_ORDER_REQUEST = "CREATE_ORDER_REQUEST";
+export const CREATE_ORDER_SUCCESS = "CREATE_ORDER_SUCCESS";
+export const CREATE_ORDER_FAIL = "CREATE_ORDER_FAIL";
+
+/// get all Orders list for user
+export const MY_ORDERS_LIST_REQUEST = "MY_ORDERS_LIST_REQUEST";
+export const MY_ORDERS_LIST_SUCCESS = "MY_ORDERS_LIST_SUCCESS";
+export const MY_ORDERS_LIST_FAIL = "MY_ORDERS_LIST_FAIL";
+
+/// get perticular Order Details
+export const MY_ORDER_DETAILS_REQUEST = "MY_ORDER_DETAILS_REQUEST";
+export const MY_ORDER_DETAILS_SUCCESS = "MY_ORDER_DETAILS_SUCCESS";
+export const MY_ORDER_DETAILS_FAIL = "MY_ORDER_DETAILS_FAIL";
+
+export const CLEAR_ERROR = "CLEAR_ERROR";
