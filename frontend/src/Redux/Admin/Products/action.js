@@ -3,7 +3,7 @@ import * as types from "./actionTypes";
 
 ///get all proudcts list for admin
 export const getAdminProducts = (toast) => async (dispatch) => {
-  let apiLink = `http://localhost:8080/admin/products`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/admin/products`;
   const config = {
     headers: {
       "Content-Type": "multipart/form-data",
@@ -47,7 +47,7 @@ export const createAdminProduct = (toast, productData) => async (dispatch) => {
   dispatch({ type: types.ADMIN_PRODUCT_CREATE_REQUEST });
   try {
     const { data } = await axios.post(
-      `http://localhost:8080/admin/product/new`,
+      `https://drab-erin-bandicoot-hem.cyclic.app/admin/product/new`,
       productData,
       {
         withCredentials: true,
@@ -83,7 +83,7 @@ export const createAdminProduct = (toast, productData) => async (dispatch) => {
 
 ///Delete proudct at Admin side
 export const deleteAdminProduct = (toast, id) => async (dispatch) => {
-  let apiLink = `http://localhost:8080/admin/product/${id}`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/admin/product/${id}`;
 
   //dispatch({ type: types.ADMIN_PRODUCT_DELETE_REQUEST });
   try {
@@ -120,7 +120,7 @@ export const deleteAdminProduct = (toast, id) => async (dispatch) => {
 ///Update proudct at Admin side
 export const updateAdminProduct =
   (toast, id, updatedData) => async (dispatch) => {
-    let apiLink = `http://localhost:8080/admin/product/${id}`;
+    let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/admin/product/${id}`;
 
     try {
       const { data } = await axios.put(apiLink, updatedData, {

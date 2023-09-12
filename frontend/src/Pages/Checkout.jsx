@@ -505,7 +505,7 @@ const Payment = () => {
         },
       };
       const { data } = await axios.post(
-        "http://localhost:8080/payment/process",
+        "https://drab-erin-bandicoot-hem.cyclic.app/payment/process",
         paymentData,
         { withCredentials: true },
         config

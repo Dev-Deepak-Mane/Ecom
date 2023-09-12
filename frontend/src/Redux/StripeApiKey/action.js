@@ -4,9 +4,12 @@ import axios from "axios";
 export const fetchStripeApiKey = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get("http://localhost:8080/stripeapikey", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://drab-erin-bandicoot-hem.cyclic.app/stripeapikey",
+        {
+          withCredentials: true,
+        }
+      );
       const apiKey = response.data;
 
       dispatch(setStripeApiKey(apiKey));

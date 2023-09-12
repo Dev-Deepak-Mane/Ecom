@@ -3,7 +3,7 @@ import * as types from "./actionTypes";
 
 /// create order by user
 export const creatOrder = (toast, order) => async (dispatch, getState) => {
-  let apiLink = `http://localhost:8080/order/new`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/order/new`;
 
   dispatch({ type: types.CREATE_ORDER_REQUEST });
 
@@ -40,7 +40,7 @@ export const creatOrder = (toast, order) => async (dispatch, getState) => {
 
 /// get orders List for user
 export const getMyOrdersList = (toast) => async (dispatch) => {
-  let apiLink = `http://localhost:8080/orders/me`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/orders/me`;
 
   dispatch({ type: types.MY_ORDERS_LIST_REQUEST });
 
@@ -70,7 +70,7 @@ export const getMyOrdersList = (toast) => async (dispatch) => {
 
 /// get perticular Order Details
 export const getOrderDetails = (toast, id) => async (dispatch) => {
-  let apiLink = `http://localhost:8080/order/${id}`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/order/${id}`;
 
   dispatch({ type: types.MY_ORDER_DETAILS_REQUEST });
 

@@ -3,7 +3,7 @@ import * as types from "./actionTypes";
 
 ///user login
 export const login = (toast, email, password) => async (dispatch) => {
-  let apiLink = `http://localhost:8080/login`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/login`;
 
   dispatch({ type: types.USER_LOGIN_REQUEST });
 
@@ -47,7 +47,7 @@ export const login = (toast, email, password) => async (dispatch) => {
 /// user register
 
 export const register = (toast, userData) => async (dispatch) => {
-  let apiLink = `http://localhost:8080/register`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/register`;
   // const config = {
   //   headers: {
   //     "Content-Type": "multipart/form-data",
@@ -90,7 +90,7 @@ export const register = (toast, userData) => async (dispatch) => {
 ///and get the profile until token expire
 
 export const getProfile = (toast) => async (dispatch) => {
-  let apiLink = `http://localhost:8080/me`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/me`;
 
   dispatch({ type: types.USER_PROFILE_REQUEST });
 
@@ -130,7 +130,7 @@ export const getProfile = (toast) => async (dispatch) => {
 
 /// logout user
 export const logoutUser = (toast) => async (dispatch) => {
-  let apiLink = `http://localhost:8080/logout`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/logout`;
 
   try {
     await axios.get(apiLink, { withCredentials: true });
@@ -163,7 +163,7 @@ export const logoutUser = (toast) => async (dispatch) => {
 
 ///// update profile
 export const updateProfile = (toast, userData) => async (dispatch) => {
-  let apiLink = `http://localhost:8080/me/update`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/me/update`;
   const config = {
     headers: {
       "Content-Type": "multipart/form-data",
@@ -209,7 +209,7 @@ export const updateProfile = (toast, userData) => async (dispatch) => {
 
 ///// update Password
 export const updatePassword = (toast, passwords) => async (dispatch) => {
-  let apiLink = `http://localhost:8080/password/update`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/password/update`;
   const config = {
     headers: {
       "Content-Type": "application/json",

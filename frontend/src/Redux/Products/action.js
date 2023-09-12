@@ -19,7 +19,7 @@ export const getProducts =
       }
     }
     //console.log("xxxxxxxxx22222222222", params, query, category);
-    let apiLink = `http://localhost:8080/products`;
+    let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/products`;
 
     //&price[gte]=${price[0]}&price[lte]=${price[1]}
     dispatch({ type: types.ALL_PRODUCTS_REQUEST });
@@ -48,7 +48,7 @@ export const getProducts =
 //   dispatch({ type: types.ALL_PRODUCTS_REQUEST });
 
 //   try {
-//     const { data } = await axios.get("http://localhost:8080/products", {
+//     const { data } = await axios.get("https://drab-erin-bandicoot-hem.cyclic.app/products", {
 //       params,
 //     });
 //     // console.log(data);
@@ -80,7 +80,9 @@ export const clearErrors = () => (dispatch) => {
 export const getProductDetails = (id, toast) => async (dispatch) => {
   dispatch({ type: types.PRODUCT_DETAILS_REQUEST });
   try {
-    const { data } = await axios.get(`http://localhost:8080/product/${id}`);
+    const { data } = await axios.get(
+      `https://drab-erin-bandicoot-hem.cyclic.app/product/${id}`
+    );
 
     dispatch({ type: types.PRODUCT_DETAILS_SUCCESS, payload: data });
   } catch (error) {
@@ -106,7 +108,7 @@ export const addNewReview = (toast, reviewData) => async (dispatch) => {
   dispatch({ type: types.ADD_NEW_REVIEW_REQUEST });
   try {
     const { data } = await axios.put(
-      `http://localhost:8080/review`,
+      `https://drab-erin-bandicoot-hem.cyclic.app/review`,
       reviewData,
       { withCredentials: true }
     );

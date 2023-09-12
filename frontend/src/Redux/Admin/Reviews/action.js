@@ -3,7 +3,7 @@ import * as types from "./actionTypes";
 
 ///get all Reviews list for admin
 export const getAdminAllReviews = (toast, productId) => async (dispatch) => {
-  let apiLink = `http://localhost:8080/reviews?id=${productId}`;
+  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/reviews?id=${productId}`;
   dispatch({ type: types.ADMIN_ALL_REVIEWS_REQUEST });
   try {
     const { data } = await axios.get(apiLink, { withCredentials: true });
@@ -35,7 +35,7 @@ export const clearErrors = () => (dispatch) => {
 ///Delete review at Admin side
 export const deleteAdminReview =
   (toast, reviewId, productId) => async (dispatch) => {
-    let apiLink = `http://localhost:8080/reviews?id=${reviewId}&productId=${productId}`;
+    let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/reviews?id=${reviewId}&productId=${productId}`;
 
     dispatch({ type: types.ADMIN_REVIEW_DELETE_REQUEST });
     try {

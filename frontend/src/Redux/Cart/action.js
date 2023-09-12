@@ -4,7 +4,9 @@ import * as types from "./actionTypes";
 /// add cart Item
 export const addToCart =
   (toast, id, quantity) => async (dispatch, getState) => {
-    const { data } = await axios.get(`http://localhost:8080/product/${id}`);
+    const { data } = await axios.get(
+      `https://drab-erin-bandicoot-hem.cyclic.app/product/${id}`
+    );
 
     dispatch({
       type: types.ADD_TO_CART,
