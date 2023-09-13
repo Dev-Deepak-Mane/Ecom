@@ -3,7 +3,7 @@ import * as types from "./actionTypes";
 
 ///get all users list for admin
 export const getAdminAllUsers = (toast) => async (dispatch) => {
-  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/admin/users`;
+  let apiLink = `${process.env.REACT_APP_BASE_URL}/admin/users`;
   dispatch({ type: types.ADMIN_ALL_USERS_REQUEST });
   try {
     const { data } = await axios.get(apiLink, { withCredentials: true });
@@ -31,7 +31,7 @@ export const getAdminAllUsers = (toast) => async (dispatch) => {
 
 // ///get user details at admin side
 // export const getAdminUserDetails = (toast, id) => async (dispatch) => {
-//   let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/admin/user/${id}`;
+//   let apiLink = `${process.env.REACT_APP_BASE_URL}/admin/user/${id}`;
 //   dispatch({ type: types.ADMIN_USER_DETAILS_REQUEST });
 //   try {
 //     const { data } = await axios.get(apiLink, { withCredentials: true });
@@ -63,7 +63,7 @@ export const clearErrors = () => (dispatch) => {
 
 ///Delete user at Admin side
 export const deleteAdminuser = (toast, id) => async (dispatch) => {
-  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/admin/user/${id}`;
+  let apiLink = `${process.env.REACT_APP_BASE_URL}/admin/user/${id}`;
 
   dispatch({ type: types.ADMIN_USER_DELETE_REQUEST });
   try {
@@ -100,7 +100,7 @@ export const deleteAdminuser = (toast, id) => async (dispatch) => {
 ///Update user at Admin side
 export const updateAdminUserRole =
   (toast, id, updatedData) => async (dispatch) => {
-    let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/admin/user/${id}`;
+    let apiLink = `${process.env.REACT_APP_BASE_URL}/admin/user/${id}`;
     dispatch({ type: types.ADMIN_USER_UPDATE_REQUEST });
 
     try {

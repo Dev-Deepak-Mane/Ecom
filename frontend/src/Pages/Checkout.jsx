@@ -505,7 +505,7 @@ const Payment = () => {
         },
       };
       const { data } = await axios.post(
-        "https://drab-erin-bandicoot-hem.cyclic.app/payment/process",
+        `${process.env.REACT_APP_BASE_URL}/payment/process`,
         paymentData,
         { withCredentials: true },
         config

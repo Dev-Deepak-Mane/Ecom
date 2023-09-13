@@ -5,7 +5,7 @@ export const fetchStripeApiKey = () => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
-        "https://drab-erin-bandicoot-hem.cyclic.app/stripeapikey",
+        `${process.env.REACT_APP_BASE_URL}/stripeapikey`,
         {
           withCredentials: true,
         }

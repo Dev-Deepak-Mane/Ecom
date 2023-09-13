@@ -3,7 +3,7 @@ import * as types from "./actionTypes";
 
 ///get all Oreders list for admin
 export const getAdminAllOrders = (toast) => async (dispatch) => {
-  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/admin/orders`;
+  let apiLink = `${process.env.REACT_APP_BASE_URL}/admin/orders`;
   dispatch({ type: types.ADMIN_ALL_ORDERS_REQUEST });
   try {
     const { data } = await axios.get(apiLink, { withCredentials: true });
@@ -37,7 +37,7 @@ export const clearErrors = () => (dispatch) => {
 
 ///Delete Order at Admin side
 export const deleteAdminOrder = (toast, id) => async (dispatch) => {
-  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/admin/order/${id}`;
+  let apiLink = `${process.env.REACT_APP_BASE_URL}/admin/order/${id}`;
 
   dispatch({ type: types.ADMIN_ORDER_DELETE_REQUEST });
   try {
@@ -74,7 +74,7 @@ export const deleteAdminOrder = (toast, id) => async (dispatch) => {
 ///Update Order at Admin side
 export const updateAdminOrderProcess =
   (toast, id, updatedData) => async (dispatch) => {
-    let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/admin/order/${id}`;
+    let apiLink = `${process.env.REACT_APP_BASE_URL}/admin/order/${id}`;
     dispatch({ type: types.ADMIN_ORDER_UPDATE_REQUEST });
 
     try {

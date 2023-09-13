@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Box, Icon, Text, Flex, Tooltip, Button } from "@chakra-ui/react";
 import { RxDashboard } from "react-icons/rx";
-import { MdProductionQuantityLimits, MdOutlineReviews } from "react-icons/md";
+import {
+  MdProductionQuantityLimits,
+  MdOutlineReviews,
+  MdOutlineHome,
+} from "react-icons/md";
 import { HiUsers } from "react-icons/hi";
 import { BsBoxes } from "react-icons/bs";
 import { useBreakpointValue } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const AdminDashboardNavbar = ({
   handleSidebarToggle,
@@ -17,6 +21,11 @@ const AdminDashboardNavbar = ({
   handleSidebarToggle = () => {
     setIsExpanded(!isExpanded);
     setIsSidebarOpen(!isSidebarOpen);
+  };
+  const location = useLocation();
+
+  const isActive = (path) => {
+    return location.pathname === path;
   };
 
   const sidebarStyles = {
@@ -66,36 +75,44 @@ const AdminDashboardNavbar = ({
           >
             <Link to="/dashboard">
               <Tooltip placement="bottom" label="Dashboard">
-                <Box>
+                <Box color={isActive("/dashboard") ? "blue.500" : ""}>
                   <Icon as={RxDashboard} />
                 </Box>
               </Tooltip>
             </Link>
             <Link to="dashboard/products">
               <Tooltip placement="bottom" label="Products" fontSize="md">
-                <Box>
+                <Box color={isActive("/dashboard/products") ? "blue.500" : ""}>
                   <Icon as={BsBoxes} />
                 </Box>
               </Tooltip>
             </Link>
             <Link to="dashboard/orders">
               <Tooltip placement="bottom" label="Orders" fontSize="md">
-                <Box>
+                <Box color={isActive("/dashboard/orders") ? "blue.500" : ""}>
                   <Icon as={MdProductionQuantityLimits} />
                 </Box>
               </Tooltip>
             </Link>
             <Link to="dashboard/users">
               <Tooltip placement="bottom" label="Users" fontSize="md">
-                <Box>
+                <Box color={isActive("/dashboard/users") ? "blue.500" : ""}>
                   <Icon as={HiUsers} />
                 </Box>
               </Tooltip>
             </Link>
             <Link to="dashboard/reviews">
               <Tooltip placement="bottom" label="Reviews" fontSize="md">
-                <Box>
+                <Box color={isActive("/dashboard/reviews") ? "blue.500" : ""}>
                   <Icon as={MdOutlineReviews} />
+                </Box>
+              </Tooltip>
+            </Link>
+
+            <Link to="/">
+              <Tooltip placement="bottom" label="Home" fontSize="md">
+                <Box>
+                  <Icon as={MdOutlineHome} />
                 </Box>
               </Tooltip>
             </Link>
@@ -121,37 +138,44 @@ const AdminDashboardNavbar = ({
               fontSize="30px"
             >
               <Link to="/dashboard">
-                <Flex>
+                <Flex color={isActive("/dashboard") ? "blue.500" : ""}>
                   <Icon as={RxDashboard} />
                   <Text style={textStyles}>Dashboard</Text>
                 </Flex>
               </Link>
 
               <Link to="dashboard/products">
-                <Flex>
+                <Flex color={isActive("/dashboard/products") ? "blue.500" : ""}>
                   <Icon as={BsBoxes} />
                   <Text style={textStyles}>Products</Text>
                 </Flex>
               </Link>
 
               <Link to="dashboard/orders">
-                <Flex>
+                <Flex color={isActive("/dashboard/orders") ? "blue.500" : ""}>
                   <Icon as={MdProductionQuantityLimits} />
                   <Text style={textStyles}>Orders</Text>
                 </Flex>
               </Link>
 
               <Link to="dashboard/users">
-                <Flex>
+                <Flex color={isActive("/dashboard/users") ? "blue.500" : ""}>
                   <Icon as={HiUsers} />
                   <Text style={textStyles}>Users</Text>
                 </Flex>
               </Link>
 
               <Link to="dashboard/reviews">
-                <Flex>
+                <Flex color={isActive("/dashboard/reviews") ? "blue.500" : ""}>
                   <Icon as={MdOutlineReviews} />
                   <Text style={textStyles}>Reviews</Text>
+                </Flex>
+              </Link>
+
+              <Link to="/">
+                <Flex color={isActive("/") ? "blue.500" : ""}>
+                  <Icon as={MdOutlineHome} />
+                  <Text style={textStyles}>Home</Text>
                 </Flex>
               </Link>
             </Box>

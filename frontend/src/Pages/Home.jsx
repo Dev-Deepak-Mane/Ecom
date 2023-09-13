@@ -7,6 +7,8 @@ import backgroundBanner from "../Assests/Images/banner-02.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Flex, Heading, Text } from "@chakra-ui/react";
 const Home = () => {
+  const { REACT_APP_BASE_URL } = process.env;
+  console.log(process.env.REACT_APP_BASE_URL, REACT_APP_BASE_URL);
   return (
     <>
       <MetaData title={"ले-Lo"} />

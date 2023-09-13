@@ -3,7 +3,7 @@ import * as types from "./actionTypes";
 
 ///user login
 export const login = (toast, email, password) => async (dispatch) => {
-  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/login`;
+  let apiLink = `${process.env.REACT_APP_BASE_URL}/login`;
 
   dispatch({ type: types.USER_LOGIN_REQUEST });
 
@@ -47,12 +47,13 @@ export const login = (toast, email, password) => async (dispatch) => {
 /// user register
 
 export const register = (toast, userData) => async (dispatch) => {
-  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/register`;
+  let apiLink = `${process.env.REACT_APP_BASE_URL}/register`;
   // const config = {
   //   headers: {
   //     "Content-Type": "multipart/form-data",
   //   },
   // };
+
   dispatch({ type: types.USER_REGISTER_REQUEST });
 
   try {
@@ -90,7 +91,7 @@ export const register = (toast, userData) => async (dispatch) => {
 ///and get the profile until token expire
 
 export const getProfile = (toast) => async (dispatch) => {
-  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/me`;
+  let apiLink = `${process.env.REACT_APP_BASE_URL}/me`;
 
   dispatch({ type: types.USER_PROFILE_REQUEST });
 
@@ -130,7 +131,7 @@ export const getProfile = (toast) => async (dispatch) => {
 
 /// logout user
 export const logoutUser = (toast) => async (dispatch) => {
-  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/logout`;
+  let apiLink = `${process.env.REACT_APP_BASE_URL}/logout`;
 
   try {
     await axios.get(apiLink, { withCredentials: true });
@@ -163,7 +164,7 @@ export const logoutUser = (toast) => async (dispatch) => {
 
 ///// update profile
 export const updateProfile = (toast, userData) => async (dispatch) => {
-  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/me/update`;
+  let apiLink = `${process.env.REACT_APP_BASE_URL}/me/update`;
   const config = {
     headers: {
       "Content-Type": "multipart/form-data",
@@ -209,7 +210,7 @@ export const updateProfile = (toast, userData) => async (dispatch) => {
 
 ///// update Password
 export const updatePassword = (toast, passwords) => async (dispatch) => {
-  let apiLink = `https://drab-erin-bandicoot-hem.cyclic.app/password/update`;
+  let apiLink = `${process.env.REACT_APP_BASE_URL}/password/update`;
   const config = {
     headers: {
       "Content-Type": "application/json",

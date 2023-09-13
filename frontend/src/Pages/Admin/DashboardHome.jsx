@@ -181,7 +181,6 @@ const DashboardHome = () => {
           <Heading textAlign={"center"} as="h2" size="md" mb={4}>
             Dashboard
           </Heading>
-          <Text>Home</Text>
         </Flex>
         <Box
           textAlign={"center"}
